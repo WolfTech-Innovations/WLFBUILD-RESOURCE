@@ -234,27 +234,6 @@ void handle_sigint(int sig) {
     signal(SIGINT, handle_sigint); // Re-register handler
 }
 
-int main() {
-    // Set up signal handling
-    signal(SIGINT, handle_sigint);
-    signal(SIGTERM, handle_sigint);
-    
-    // Initialize the system
-    init_system();
-    
-    // Main loop
-    while (1) {
-        update_animation();
-        draw_ui();
-        swap_buffers();
-        usleep(16667); // ~60 FPS (1000000/60)
-    }
-    
-    // Cleanup (never reached in this simple example)
-    cleanup();
-    return 0;
-}
-
 // Initialize the system
 void init_system() {
     // Seed random number generator
@@ -1588,5 +1567,24 @@ void execute_selected_command(const char* command, const char* args) {
     // Parent continues, no need to wait
 }
 
-// Main entry point - implemented earlier
-// int main() { ... }
+
+int main() {
+    // Set up signal handling
+    signal(SIGINT, handle_sigint);
+    signal(SIGTERM, handle_sigint);
+    
+    // Initialize the system
+    init_system();
+    
+    // Main loop
+    while (1) {
+        update_animation();
+        draw_ui();
+        swap_buffers();
+        usleep(16667); // ~60 FPS (1000000/60)
+    }
+    
+    // Cleanup (never reached in this simple example)
+    cleanup();
+    return 0;
+}
