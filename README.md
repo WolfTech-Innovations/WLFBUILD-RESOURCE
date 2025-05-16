@@ -1,2 +1,2 @@
 # WLFBUILD-RESOURCE
-Building Resources for WolfOS
+Building Resources for KordOS
