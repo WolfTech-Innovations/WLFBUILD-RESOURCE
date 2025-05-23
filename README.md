@@ -1,2 +1,2 @@
 # WLFBUILD-RESOURCE
-Building Resources for KordOS
+Building Resources for cybr
